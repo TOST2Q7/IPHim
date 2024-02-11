@@ -15,3 +15,11 @@ centre {
 .hr1 {
     color: rgb(143, 143, 143);
 }
+
+#myButton {
+    float: right;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 220%;
+}
