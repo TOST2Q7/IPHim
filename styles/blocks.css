@@ -1,0 +1,38 @@
+.main_bk {
+  padding-top: 30px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-bottom: 30px;
+  background-color: rgb(55, 55, 55);
+  
+  margin-left: 10%; /* Отступ слева */
+  margin-right: 10%; /* Отступ справа */
+  margin-top: 14px;
+  box-shadow: 0px 2px 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+.bk_32 {
+  background-color: rgb(62, 62, 62);
+  color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 8px 3px rgba(0, 0, 0, 0.3);
+  background-image: image("");
+  background-size: cover;
+  background-attachment: fixed; /* Это обеспечит, чтобы фон изображения заполнил весь блок */
+  opacity: 0.8; /* Устанавливаем полупрозрачность для фона */
+  font-size: 150%; /* Размер текста будет относительным относительно размеров блока */
+  /* padding: 0; Убираем внутренний отступ */
+  /* margin: 10px; Устанавливаем небольшой внешний отступ */
+  min-width: 20%;
+  min-height: 20%;
+  text-align: left;
+  
+  margin-top: 14px;
+  
+  border-top: 4%;
+  border-bottom: 4%;
+
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}

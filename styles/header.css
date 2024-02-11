@@ -1,0 +1,26 @@
+header {
+    background-color: #272727;
+    margin: 0;
+    padding: 0;
+    height: 7 vh;
+    font-size: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text {
+    font-size: 48%;
+    margin: 0;
+    padding: 0;
+    
+} .header-text p {
+    margin: 0;
+    padding: 0;
+} 
+.header-headText-1 {
+    color: #ffc700;
+} 
+.header-headText-2 {
+    color: #00ecff;
+}
