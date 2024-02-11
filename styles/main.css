@@ -11,3 +11,7 @@ centre {
     padding: 0;
     position: fixed;
 }
+
+.hr1 {
+    color: rgb(143, 143, 143);
+}
