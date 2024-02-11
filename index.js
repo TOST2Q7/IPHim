@@ -3,17 +3,22 @@
 
 function myFunction() {
     alert("Функция вызвана!");
+    var text = document.getElementById("text21");
+    text.innerHTML = selectElement;
 }
 
 // Находим кнопку по ее id
 var button = document.getElementById("myButton");
 
 // Назначаем обработчик события "click" для кнопки
-button.addEventListener("click", myFunction);
+button.addEventListener("click", checkSelected);
 
 
 
-
+var selectElement;
+var inputValue_Amper;
+var inputValue_Time;
+var text;
 
 
 
@@ -29,12 +34,11 @@ button.addEventListener("click", myFunction);
 
 
 function checkSelected() {
-    const selectElement = document.getElementById("input_data").value;
-    const inputValue_Amper = document.getElementById("inputAmper").value;
-    const inputValue_Time = document.getElementById("inputTime").value;
+    selectElement = document.getElementById("input_data").value;
+    inputValue_Amper = document.getElementById("inputAmper").value;
+    inputValue_Time = document.getElementById("inputTime").value;
+    text = document.getElementById("text21");
 
-
-    
 
 
     switch(selectElement) {
@@ -51,44 +55,43 @@ function checkSelected() {
             break;
         
         case "au1":
-            handleOption3();
+            handleOption4();
             break;
 
         case "au2":
-            handleOption3();
+            handleOption5();
             break;
         
         default:
             // Действие по умолчанию, если не выбрано ни одно из опций
             break;
     }
+
+
+
+
+
+
 }
 
 function handleOption1() {
-    console.log("Option 1 выбрана");
-    // Дополнительные действия для Option 1
+    text.innerHTML = (63.55*inputValue_Amper*inputValue_Time)/(2*96485.3321233100184)
 }
 
 function handleOption2() {
-    console.log("Option 1 выбрана");
-    // Дополнительные действия для Option 1
+    text.innerHTML = (63.55*inputValue_Amper*inputValue_Time)/(3*96485.3321233100184)
 }
 
 function handleOption3() {
-    console.log("Option 1 выбрана");
-    // Дополнительные действия для Option 1
+    text.innerHTML = (26.98*inputValue_Amper*inputValue_Time)/(3*96485.3321233100184)
+}
+
+function handleOption4() {
+    text.innerHTML = (196.967*inputValue_Amper*inputValue_Time)/(3*96485.3321233100184)
+}
+
+function handleOption5() {
+    text.innerHTML = (196.967*inputValue_Amper*inputValue_Time)/(2*96485.3321233100184)
 }
 // ---------------------------------
 
-
-
-function getValue() {
-    // Получаем доступ к элементу input по его id
-    var inputElement = document.getElementById("myInput");
-    
-    // Получаем значение, введенное пользователем
-    var value = inputElement.value;
-    
-    // Выводим значение в консоль (или можете использовать его для других целей)
-    console.log("Значение введенное пользователем: " + value);
-}
