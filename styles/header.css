@@ -10,11 +10,12 @@ header {
 }
 
 .header-text {
-    font-size: 48%;
+    font-size: 45%;
     margin: 0;
     padding: 0;
     
-} .header-text p {
+} 
+.header-text p {
     margin: 0;
     padding: 0;
 } 
@@ -24,3 +25,13 @@ header {
 .header-headText-2 {
     color: #00ecff;
 }
+
+
+
+
+
+
+
+
+
+

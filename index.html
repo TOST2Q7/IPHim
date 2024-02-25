@@ -1,34 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=10, initial-scale=1.0">
-        <title>Sandbox</title>
-        <link rel="stylesheet" href="styles/header.css">
-        <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="styles/image.css">
-        <link rel="stylesheet" href="styles/blocks.css">
-        <link rel="stylesheet" href="styles/selects.css">
-        <script defer src="index.js"></script>
-    </head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=10, initial-scale=1.0">
+		<title>Sandbox</title>
+		<link rel="stylesheet" href="styles/main.css">
+		<script defer src="index.js"></script>
+	</head>
 
-    <body>
-        <header>
-            <div class="header-text">
-                <p>
-                    Sand<span class="header-headText-1">box</span> Хими<span class="header-headText-2">я</span>
-                </p>
-            </div>
-        </header>
+	<body>
+		<div class="app">
+			<header class="app-header">
+				<div class="app-header__image">
+					<img src="images/menu.png" alt=""> <!--Это в комент-->
+				</div>
+				<div class="app-header__text">
+					<h2>Sand<span class="headline-1">box</span> Хими<span class="headline-2">я</span></h2>
+				</div>
+				<div class="app-header__image">
+				</div>
+			</header>
+			<main class="app-main">
+				<div class="app-main-wrapper">
+					<section class="app-main-wrapper__block block-1">
+						<h5>Вводные данные</h5>
+						<!-- <h6>Ввод</h6> -->
+						<div class="select">
+							<label for="anode" class="footnote">Анод</label>
+							<select id="anode">
+							</select>
+						</div>
+						<div class="select">
+							<label for="cathode" class="footnote">Катод</label>
+							<select id="cathode">
+							</select>
+						</div>
+						<div class="select">
+							<label for="electrolyte" class="footnote">Электролит</label>
+							<select id="electrolyte">
+							</select>
+						</div>
+						<hr>
+						<div class="select">
+							<label for="InputA" class="footnote">Ток [I, A]</label>
+							<input type="number" id="InputA">
+						</div>
+						<hr>
+						<div class="select">
+							<label for="InputT" class="footnote">Время проведения реакции [t, C]</label>
+							<input type="number" id="InputT">
+						</div>
+					</section>
+					<section class="app-main-wrapper__block block-2">
+						<h4>Результат</h4>
+                            <span class="footnote-2 rc-white" id="itogo1">Масса: </span>
+                            <span class="footnote-2 rc-white" id="itogo2">Образования на катоде: </span>
+                            <span class="footnote-2 rc-white" id="itogo3">Образования на аноде: </span>
+                            <div class="spacer-h-20"></div>
+						<button id="myButton">Получить результат</button>
+					</section>
+					<section class="app-main-wrapper__block block-3">
+						<h4>Комментарий от GPT-3</h4>
+					</section>
+				</div>
+			</main>
+			<footer>
 
-
-
-        
-        <div>
-
-
-        </div>
-
-    </body>
-
+			</footer>
+		</div>
+	</body>
 </html>

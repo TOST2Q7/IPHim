@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Unbounded:wght@200..900&display=swap');
+@import "resetting-styles";
+
+@mixin flex($flex-direction, $flex-content, $flex-items, $flex-grow: null, $flex-shrink: null) {
+	display: flex;
+	flex-direction: $flex-direction;
+	justify-content: $flex-content;
+	align-items: $flex-items;
+	
+	@if(type-of($flex-grow) == number) {
+		flex-grow: $flex-grow;
+	}
+	
+	@if(type-of($flex-shrink) == number) {
+		flex-shrink: $flex-shrink;
+	}
+}
+
+@mixin flex-inline($flex-direction, $flex-content, $flex-items, $flex-grow: null, $flex-shrink: null) {
+	display: inline-flex;
+	flex-direction: $flex-direction;
+	justify-content: $flex-content;
+	align-items: $flex-items;
+	
+	@if(type-of($flex-grow) == number) {
+		flex-grow: $flex-grow;
+	}
+	
+	@if(type-of($flex-shrink) == number) {
+		flex-shrink: $flex-shrink;
+	}
+}
+
+
+body {
+	color: #ffffff;
+	background: #262424;
+	font-family: "Manrope", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 500;
+	font-style: normal;
+	//font-size: 1.0rem;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: "Unbounded", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	//line-height: 1.5em;
+	padding-bottom: 0.5em;
+}
+
+h6 {
+	font-family: "Manrope", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+	//line-height: 1.5em;
+	padding-bottom: 0.5em;
+	//text-transform: uppercase;
+}
+
+h1 {
+	font-size: 72px;
+}
+h2 {
+	font-size: 56px;
+}
+h3 {
+	font-size: 48px;
+}
+h4 {
+	font-size: 36px;
+}
+h5 {
+	font-size: 28px;
+}
+h6 {
+	font-size: 20px;
+}
+
+select {
+	min-width: 250px;
+	max-width: 400px;
+	height: 22px;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	
+	&:hover {
+		outline: #7B68EE 1.7px solid;
+		//border: 1px #00ecff solid;
+	}
+}
+
+input[type="number"] {
+	min-width: 250px;
+	max-width: 400px;
+	height: 22px;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	
+	&:hover {
+		outline: #7B68EE 1.7px solid;
+	}
+}
+
+button {
+	width: 380px;
+	height: 22px;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	
+	font-family: "Manrope", sans-serif;
+	font-optical-sizing: auto;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: 900;
+	font-style: normal;
+	letter-spacing: 0.20em;
+	
+	color: #000000;
+	text-transform: uppercase;
+	
+	&:hover {
+		outline: #7B68EE 1.7px solid;
+	}
+}
+
+hr {
+	width: 100%;
+	padding: 0 10px;
+}
+
+.headline-1 {
+	color: #ffc700;
+}
+.headline-2 {
+	color: #00ecff;
+}
+
+.footnote {
+	font-family: "Manrope", sans-serif;
+	font-optical-sizing: auto;
+	font-size: 11px;
+	line-height: 18px;
+	font-weight: 600;
+	font-style: normal;
+	letter-spacing: 0.15em;
+	
+	color: #9CA4AB;
+	text-transform: uppercase;
+}
+
+.footnote-2 {
+	font-family: "Manrope", sans-serif;
+	font-optical-sizing: auto;
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: 500;
+	font-style: normal;
+	letter-spacing: 0.05em;
+	
+	color: #9CA4AB;
+}
+
+.select {
+	@include flex(row, stretch, baseline);
+	gap: 10px;
+	& label {
+		width: 120px;
+	}
+	
+	/*& * {
+		flex-grow: 1;
+	}*/
+}
+
+$sizes: (2, 4, 5, 8, 10, 15, 20, 25, 30, 35, 40, 45, 50);
+
+@each $size in $sizes {
+	.spacer-w-#{$size} {
+		width: #{$size}px;
+	}
+	.spacer-h-#{$size} {
+		height: #{$size}px;
+	}
+}
+
+.app {
+	@include flex(column, stretch, stretch);
+	background: #262424;
+	
+	&-header {
+		@include flex(row, stretch, stretch, 1);
+		width: 100%;
+		padding: 10px 0;
+		
+		background: #1a1818;
+		
+		&__image {
+			@include flex(row, center, center);
+			aspect-ratio: 1;
+			padding: 10px;
+			
+			& img {
+				width: 32px;
+				height: 32px;
+			}
+		}
+		
+		&__text {
+			@include flex(row, center, stretch, 1);
+			& h2 {
+				padding-bottom: 0;
+			}
+		}
+	}
+	
+	&-main {
+		@include flex(row, center, stretch);
+		
+		&-wrapper {
+			@include flex(column, stretch, stretch, 1);
+			//max-width: 1280px;
+			max-width: 720px;
+			
+			&__block {
+				@include flex(column, stretch, stretch, 1);
+				gap: 5px;
+				
+				padding: 10px 20px;
+				margin-top: 80px;
+				
+				border-top: 3px #afadb7 solid;
+				background-color: #3b3838;
+			}
+		}
+	}
+}
+
+$colours: (red, blue, green, white, magenta, cyan, crimson, darkblue);
+
+@each $colour in $colours {
+	.rc-#{$colour} {
+		color: #{$colour};
+	}
+	.rb-#{$colour} {
+		background-color: #{$colour};
+	}
+}
